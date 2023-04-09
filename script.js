@@ -9,14 +9,14 @@ window.onload = function() {
             body = await response.json();
             
             body.forEach(todo => {
-                cards.innerHTML += makecard(todo.name, todo.priority, todo.body, todo.done);
+                cards.innerHTML += makecard(todo.name, todo.priority, todo.body, todo.done, todo.pr);
             });
     
         }
     });
 }
 
-function makecard(name, priority, body, done) {
+function makecard(name, priority, body, done, pr) {
     let prioritycolor;
 
     switch (priority) {
@@ -37,6 +37,7 @@ function makecard(name, priority, body, done) {
         <div class="card-body">
             <p class="card-text"><strong>Description:</strong> ${body}</p>
             <p class="card-text"><strong>Done:</strong> ${done ? "✅" : "❌"}</p> 
+            <p class="card-text"><strong>Pull Request:</strong> ${pr ? pr : "❌"}</p> 
         </div>
         <div class="card-footer">
     </div>`

@@ -2,11 +2,31 @@
     {
         "name": "Add auto play",
         "priority": 1,
-        "body": "Create an autoplay function"
+        "body": "Create an autoplay function",
+        "done": false
     },
     {
         "name": "Add .env",
         "priority": 1,
-        "body": "Move the token to the .env file"
+        "body": "Move the token to the .env file",
+        "done": false
+    },
+    {
+        "name": "Move to play-dl",
+        "priority": 2,
+        "body": "Replace the package ytdl-core by play-dl",
+        "done": false
+    },
+    {
+        "name": "Move to yarn ?",
+        "priority": 0,
+        "body": "Replace NPM by YARN",
+        "done": true
+    },
+    {
+        "name": "Fix /queue songs amount",
+        "priority": 2,
+        "body": "Fix the amount of songs in the /queue",
+        "done": false
     }
 ]

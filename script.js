@@ -9,14 +9,14 @@ window.onload = function() {
             body = await response.json();
             
             body.forEach(todo => {
-                cards.innerHTML += makecard(todo.name, todo.priority, todo.body);
+                cards.innerHTML += makecard(todo.name, todo.priority, todo.body, todo.done);
             });
     
         }
     });
 }
 
-function makecard(name, priority, body) {
+function makecard(name, priority, body, done) {
     let prioritycolor;
 
     switch (priority) {
@@ -36,6 +36,7 @@ function makecard(name, priority, body) {
         <div class="card-header"><figure class="user-avatar user-avatar-lg"><img src="${prioritycolor}" alt=""></figure> ${name}</div>
         <div class="card-body">
             <p class="card-text"><strong>Description:</strong> ${body}</p>
+            <p class="card-text"><strong>Done:</strong> ${done ? "✅" : "❌"}</p> 
         </div>
         <div class="card-footer">
     </div>`

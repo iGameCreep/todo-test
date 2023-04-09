@@ -1,12 +1,12 @@
 [
     {
         "name": "Add auto play",
-        "priority": 2,
+        "priority": 1,
         "body": "Create an autoplay function"
     },
     {
         "name": "Add .env",
-        "priority": 2,
+        "priority": 1,
         "body": "Move the token to the .env file"
     }
 ]

@@ -1,17 +1,32 @@
-const cards = document.getElementById('cards');
+const url = "https://raw.githubusercontent.com/iGameCreep/todo-test/main/todos.json";
+let body = {};
+
+window.onload = function() {
+    const cards = document.getElementById('cards');
+
+    fetch(url).then(async response => {
+        if (response.ok) {
+            body = await response.json();
+            
+            body.forEach(todo => {
+                cards.innerHTML += makecard(todo.name, todo.priority, todo.body);
+            });
+    
+        }
+    });
+}
 
 function makecard(name, priority, body) {
-
     let prioritycolor;
 
     switch (priority) {
-        case 1:
+        case 0:
             prioritycolor = "./images/low.png";
             break;
-        case 2:
+        case 1:
             prioritycolor = "./images/medium.png";
             break;
-        case 3:
+        case 2:
             prioritycolor = "./images/high.png";
             break;
     }
@@ -25,4 +40,5 @@ function makecard(name, priority, body) {
         <div class="card-footer">
     </div>`
 
+    return htmlcard;
 }
